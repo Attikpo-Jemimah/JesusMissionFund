@@ -1,12 +1,9 @@
-"use client";
-
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Heart, Globe } from "lucide-react";
+import Image from "next/image";
 import { Button } from "./ui/button";
-import heroImage from "@/public/hero-volunteers.jpg";
-import { use } from "react";
-
+import herovolunteers from "@/public/hero-volunteers.jpg";
+const heroImage = herovolunteers;
 const stats = [
   { icon: Globe, value: "50+", label: "Countries" },
   { icon: Users, value: "10K+", label: "Volunteers" },
@@ -32,6 +29,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex-1 flex flex-col justify-center text-left z-10"
         >
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -42,17 +40,20 @@ export default function HeroSection() {
             Empowering Global Mission Support
           </motion.div>
 
+          {/* Main heading */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-[1.1] tracking-tight"
           >
-            Fuel <span className="text-gradient">Hope</span>
+            Fuel{" "}
+            <span className="text-gradient">Hope</span>
             <br />
             Around the World
           </motion.h1>
 
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,6 +65,7 @@ export default function HeroSection() {
             expands positive impact.
           </motion.p>
 
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,6 +81,7 @@ export default function HeroSection() {
             </Button>
           </motion.div>
 
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,9 +115,12 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
           className="flex-1 relative w-full max-w-xl lg:max-w-none"
         >
+          {/* Main image container with organic shape */}
           <div className="relative">
+            {/* Decorative ring */}
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 rounded-[3rem] blur-sm" />
             
+            {/* Image with organic rounded shape */}
             <div 
               className="relative overflow-hidden shadow-elevated"
               style={{
@@ -125,12 +131,14 @@ export default function HeroSection() {
               <Image
                 src={heroImage}
                 alt="Volunteers helping communities around the world"
+                className="w-full h-full object-cover"
                 fill
-                className="object-cover"
                 priority
               />
+              {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
 
+              {/* Floating glass card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -147,6 +155,7 @@ export default function HeroSection() {
               </motion.div>
             </div>
 
+            {/* Floating decorative element */}
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -155,6 +164,7 @@ export default function HeroSection() {
               <Globe className="w-8 h-8 text-primary-foreground" />
             </motion.div>
 
+            {/* Second floating element */}
             <motion.div
               animate={{ y: [10, -10, 10] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -166,8 +176,9 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
+      {/* Bottom wave decoration */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" className="w-full">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path
             d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
             className="fill-background"

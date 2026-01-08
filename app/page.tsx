@@ -6,11 +6,13 @@ import HowItWorks from "./components/HowItWorks";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 
+
+
 export default function LandingPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <HeroSection />
+      <HeroSection /> 
       <InfoSection />
       <HowItWorks />
       <CTASection />
