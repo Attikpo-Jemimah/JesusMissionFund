@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
+import { Button } from "./ui/button"; 
 
 export default function Navbar() {
   const { data: session, status } = useSession();
@@ -11,14 +12,16 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/About" },
-    { name: "Partner With Us", href: "/donate" },
-    { name: "Support A Missionary", href: "/missionaries" },
-    { name: "Donate", href: "/donate" },
+    { name: "About ", href: "/about" },
+    { name: "Partnership", href: "/partners" },
+    //{ name: "Support A Missionary", href: "/missionaries" },
+    { name: "Missionary", href: "/become-a-missionary" },
+    { name: "Volunteer", href: "/volunteer" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white/60 backdrop-blur-sm border-b">
+    <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b">
       <div className="max-w-7xl mx-auto px-4 h-18 flex justify-between items-center">
 
         {/* Logo */}
@@ -34,9 +37,10 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-
+        {/* donate now component button */}
+        <Button variant="default" className="bg-green-600 hover:bg-green-700 text-white"> <Link href="/donate">Donate Now</Link></Button>
         {/* Auth Section */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* <div className="hidden md:flex items-center space-x-4">
           {status === "authenticated" ? (
             <>
               <Link href="/dashboard" className="text-green-700 font-medium">
@@ -57,7 +61,7 @@ export default function Navbar() {
               </Link>
             </>
           )}
-        </div>
+        </div> */}
 
         {/* Mobile Toggle */}
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">

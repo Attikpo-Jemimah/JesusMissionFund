@@ -48,9 +48,9 @@ export default function HeroSection() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-[1.1] tracking-tight"
           >
-            Fuel <span className="text-gradient">Hope</span>
+            Jesus <span className="text-gradient">Mission</span>
             <br />
-            Around the World
+            Fund <span className="text-gradient">Foundation</span>
           </motion.h1>
 
           <motion.p
@@ -59,9 +59,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed"
           >
-            Partner with missionaries and ministries bringing light and life to
-            communities around the globe. Your support changes lives and
-            expands positive impact.
+           Partner with us to raise funds and the needed support for missionaries and volunteers spreading hope and God’s love to communities everywhere. Every moment counts— and your donations go a long way to help those afar. “With your help, the gospel reaches every corner of the world, transforming lives and advancing God’s Kingdom.”
           </motion.p>
 
           <motion.div
@@ -71,11 +69,12 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 mb-12"
           >
             <Button variant="hero" size="xl" className="group">
-              Donate Now
+              Make An Impact
+              
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="heroOutline" size="xl">
-              Support a Missionary
+              Serve With Us
             </Button>
           </motion.div>
 
